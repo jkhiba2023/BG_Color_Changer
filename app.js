@@ -15,16 +15,18 @@ button.addEventListener('click', function () {
 })
 
 h1.addEventListener('click', function () {
-  h1.style.color = makeRandomColor();
+  this.style.color = makeRandomColor();
 })
 
 
 const buttonBoxs = document.querySelectorAll('.boxes');
 
 for (let btnBox of buttonBoxs) {
-  btnBox.addEventListener('click', function () {
-    btnBox.style.backgroundColor = makeRandomColor();
-    btnBox.style.color = makeRandomColor();
-  })
+  btnBox.addEventListener('click', colorize)
+}
+
+function colorize() {
+  this.style.backgroundColor = makeRandomColor();
+  this.style.color = makeRandomColor();
 }
 
